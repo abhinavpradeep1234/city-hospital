@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ {% for d in job %}
+ <div class="card" style="width: 18rem;  display: inline-block;">
+  <center>
+    <BR>
+  <div class="card-body">
+    <h1>{{d.company_name}}</h1>
+    <h4>{{d.job_name}}</h4>
+    <h4>{{d.job_discription}}</h4>
+    <h4>{{d.working_time}}</h4>
+    <h4>{{d.salary}}</h4>
+    <a href="{% url 'registration'%}" >
+    <button type="button" class="btn btn-primary">submit</button></a>
+    </center>
+    <BR></BR>
+    </div>
+  </div>
+  <style>
+    .card{
+      width: 100px;
+      height: 400px;
+      background-color: beige;
+      border-radius: 8px;
+      box-shadow: 5px 10px;
+      border-color: black;
+    }
+  </style>
+ {% endfor %}
+ {% endblock %}
+
+ 

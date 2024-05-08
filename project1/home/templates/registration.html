@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+ {% block title %}
+ Registration
+ {% endblock %}
+ {% block content %}
+ <center>
+   <style>
+
+   </style>
+ <h1>Registration page</h1>
+ <div class="w-50 text-center p-3 my-5" >
+ <hr>
+ <form action="" method="POST">
+   {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary mb-4" type="submit">Submit</button>
+    <hr>
+  </form>
+</div>
+ </center>
+ {% endblock %}
+ 

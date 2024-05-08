@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class ="text-center  "> DEPARTMENTS</h1>
+<hr>
+
+{% for d in dept %}
+<div class="mx-auto w-50  bg-success  text-center text-green p-3 my-3">
+    <h1>{{d.dep_name}}</h1>
+    <p>{{d.dep_description}}</p>
+</div>
+</form>
+
+{% endfor %}
+
+
+
+
+{% endblock %}
+
+
+<style>
+
+    h1{
+        font-family:Arial;
+    }
+    
+</style>
+
+

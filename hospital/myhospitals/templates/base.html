@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HOSPITAL</title>
+    <style>
+        /* Add some basic styling to make it look better */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+                background-color:skyblue;
+                text-align: center;
+                padding: 1em;
+        }
+
+
+        nav {
+            background-color:black;
+            padding: 1em;
+        }
+
+        nav a {
+            color:black;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+            border-radius: 5px;
+            background-color: #777;
+        }
+
+        nav a:hover {
+            background-color:red;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1{
+            font-family:Arial;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> CITY HOSPITAL</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'index'%}">home</a>
+        
+
+       
+        <a href="{% url 'doctors'%}">doctors</a>
+        <a href="{% url 'department' %}">department</a>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+
+    <footer>
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

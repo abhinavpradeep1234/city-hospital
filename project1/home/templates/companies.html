@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+ {% block title %}
+ Companies
+ {% endblock %}
+ {% block content %}
+ <center>
+ <h1>COMPANY</h1>
+ <style>
+    h1{
+        color: brown;
+    }
+   </style> 
+</center>
+{% for d in comp %}
+<div>
+   <style></style>
+   <center>
+   <h1>{{d.comp_name}}</h1>
+</center>
+</div>
+{% endfor %}
+{% endblock %}
+ 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        /* Add some basic styling to make it look better */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+                background-color:gray;
+                color: rgb(255, 29, 29);
+                text-align: center;
+                padding: 1em;
+        }
+
+
+        nav {
+            background-color: #555;
+            padding: 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+            border-radius: 5px;
+            background-color: #777;
+        }
+
+        nav a:hover {
+            background-color: brown;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PART TIME HIRING</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'index' %}">Index</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'registration' %}">Registration</a>
+        <a href="{% url 'companies' %}">Companies</a>
+        <a href="{% url 'vacancy'%}">Vacancy</a>
+        <a href="{% url 'hiring'%}">Hiring</a>
+        <a href="{% url 'jobs'%}">jobs</a>
+    </nav>
+
+
+    <footer>
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

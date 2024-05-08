@@ -1,0 +1,121 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<form action="" method="POST">
+  {% csrf_token %}
+  <br>
+  <center>
+  <input class="form" type=""  placeholder="search your doctor" aria-label="Search" name="name"/>
+  <button  class="btn btn-success   mb-4" type="submiit">search</button>
+  
+  </center>
+
+</form>
+<br>
+{% if  result %}
+{% for d in result %}
+<div class="card" style="width: 18rem; display: inline-block;">
+  <center>
+    <img src="{{d.doc_image.url}}" class="card-img-top" alt="...">
+  </center>
+    <div class="card-body">
+        <h4>{{d.doc_name}}</h1>
+      <h5 class="card-text">{{d.doc_spec}}</h5>
+      
+      <h6>{{d.dep_name}}</h6>
+<center>
+      <a href="{% url 'booking'%}">
+      <button  class="btn btn-success   mb-4" type="submiit">book</button>
+        </a>
+  
+    </center>
+
+    </div>
+  </div>
+  <style>
+    .card{
+        width:30px;
+        height:370px;
+        border-radius:8px;
+        border-color:black;
+   
+    }
+    .card img{
+        width:200px;
+        height:140px;
+    }
+h6{
+  color:red;
+}
+    h5{
+      color:blue;
+    }
+    {% comment %} p{
+        color:green;
+    } {% endcomment %}
+    button{
+      background-color:green;
+      color:white;
+
+    }
+  </style>
+ {% endfor %}
+ {% else %}
+ <center><h6 style='color:red'>no doctors found</h1></center>
+ {% for d in doc %}
+<div class="card" style="width: 18rem; display: inline-block;">
+  <center>
+    <img src="{{d.doc_image.url}}" class="card-img-top" alt="...">
+    <center>
+    <div class="card-body">
+        <h4>{{d.doc_name}}</h3>
+      <h5 class="card-text">{{d.doc_spec}}</h5>
+      <h6>{{d.dep_name}}</h5>
+        <center>
+        <a href="{% url 'booking' %}">
+          <button  class="btn btn-success   mb-4" type="submiit">book</button>
+            </a>
+          </center>
+
+    </div>
+  </div>
+  <style>
+    .card{
+        width:30px;
+        height:370px;
+        border-radius:8px;
+        border-color:black;
+   
+    }
+    .card img{
+        width:200px;
+        height:140px;
+    }
+    {% comment %} p{
+        color:green; {% endcomment %}
+    h5{
+      color:blue;
+    }
+    h6{
+      color:red;
+    }
+    button{
+      background-color:green;
+      color:white;
+
+    }
+  </style>
+ {% endfor %}
+{% endif %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
